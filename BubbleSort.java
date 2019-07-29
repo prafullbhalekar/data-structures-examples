@@ -1,3 +1,6 @@
+import java.util.Scanner;
+
+
 class BubbleSort 
 { 
     void bubbleSort(int arr[]) 
@@ -35,11 +38,25 @@ class BubbleSort
         // Create an object of Bubble Sort 
         BubbleSort bubbleSort = new BubbleSort(); 
 
-	// Initialize an array to be sorted
-        int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
+	// Take input from user	
+        Scanner scan = new Scanner(System.in);        
+        int n, i;
 
-	// Sort the array
-        bubbleSort.bubbleSort(arr); 
+        // Ask 'N' --> numer of elements
+        System.out.println("Enter number of integer elements");
+        n = scan.nextInt();
+
+        // Create integer array on n elements
+        int arr[] = new int[n];
+
+        // Read 'N' elements from User
+        System.out.println("\nEnter "+ n +" integer elements");
+
+        for (i = 0; i < n; i++)
+            arr[i] = scan.nextInt();
+
+        // Sort elements
+        bubbleSort.bubbleSort(arr);
 
         System.out.println("Sorted array"); 
         bubbleSort.printArray(arr); 
